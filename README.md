@@ -1,10 +1,6 @@
 # Integrating SQL into R analytical workflows using duckDB & dbplyr 
 
 
-When: 7th March 2024, 1700-1830 UTC  (convert to local time)
-
-Where: Register to receive the Zoom link: https://events.humanitix.com/integrating-sql-into-r-analytical-workflows-using-dbplyr
-
 ### Summary
 
 In this workshop, we will discuss why you might consider relational databases to store environmental data. We will go over how to insert data in and retrieve data from a database using R and [duckDB](https://duckdb.org/). We will focus on how to use the R [dbplyr](https://dbplyr.tidyverse.org/) package to integrate databases into tidyverse-focused analytical workflows.
@@ -18,9 +14,9 @@ This workshop will cover these main points:
 
 ### Workshop structure
 
-- 15min [presentation](https://docs.google.com/presentation/d/e/2PACX-1vT7o0wgBzGhMl0XR0N7bDy4z5FWklfD3p4OkRGCRKcRZRJDTgO7T9b7rDp1amzPAYlrIuTsZ5sSp9BL/pub?start=false&loop=false&delayms=10000) on databases and data modelling
-- Hands-on [coding session](https://ucsb-library-research-data-services.github.io/intro-database-r/hands-on.html)
-
+- [presentation](https://docs.google.com/presentation/d/e/2PACX-1vT7o0wgBzGhMl0XR0N7bDy4z5FWklfD3p4OkRGCRKcRZRJDTgO7T9b7rDp1amzPAYlrIuTsZ5sSp9BL/pub?start=false&loop=false&delayms=10000) on databases and data modelling (20min)
+- Hands-on [coding session](https://ucsb-library-research-data-services.github.io/intro-database-r/hands-on.html) (80min)
+- Q&A (15min)
 
 
 ![](img/sortee_workshop_flyer.jpg)
