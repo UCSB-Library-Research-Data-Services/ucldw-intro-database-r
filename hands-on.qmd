@@ -99,34 +99,24 @@ First, we need to compute the average of the volume of an egg. We can use the fo
 
 $Volume=\frac{\Pi}6W^2L$
 
-Where W is the width and L the length of the egg
+Where `W` is the width and `L` the length of the egg
 
 We can use mutate to do so:
 
 ```{r}
-eggs_volume_df <- eggs_csv %>%
-  mutate(egg_volume = pi/6*Width^2*Length)
+
 ```
 
 Now let's join this information to the nest table, and average by species
 
 ```{r}
-species_egg_volume_avg <- left_join(eggs_volume_df, nests_csv, by="Nest_ID") %>%
-  group_by(Species) %>%
-  summarise(egg_volume_avg = mean(egg_volume, na.rm = TRUE)) %>%
-  arrange(desc(egg_volume_avg)) %>%
-  drop_na()
 
-species_egg_volume_avg
 ```
 
 Ideally we would like the scientific names...
 
 ```{r}
-species_egg_vol_avg <- species_study %>%
-  inner_join(species_egg_volume_avg, by = join_by(Code == Species)) 
 
-species_egg_vol_avg
 ```
 
 
@@ -165,11 +155,7 @@ species_db
 You can filter the data and select columns:
 
 ```{r}
-species_db %>%
-  filter(Relevance=="Study species") %>%
-  select(Scientific_name) %>%
-  arrange(Scientific_name) %>%
-  head(3)
+
 ```
 
 :::{.callout-note}
@@ -182,12 +168,7 @@ _Note that those are **not** data frames but tables. What `dbplyr` is actually d
 You add `collect()` to your query.
 
 ```{r}
-species_db %>%
-  filter(Relevance=="Study species") %>%
-  select(Scientific_name) %>%
-  arrange(Scientific_name) %>%
-  head(3) %>% 
-  collect()
+
 ```
 
 Note it means the full query is going to be ran and save in your R environment. This might slow things down, so you generally want to collect on the smallest data frame you can.
@@ -199,12 +180,7 @@ Adding `show_query()` at the end of your code block will let you see the SQL cod
 
 ```{r}
 # Add show_query() to the end to see what SQL it is sending!
-species_db %>%
-  filter(Relevance=="Study species") %>%
-  select(Scientific_name) %>%
-  arrange(Scientific_name) %>%
-  head(3) %>% 
-  show_query()
+
 ```
 
 This is a great way to start getting familiar with the SQL syntax, because although you can do a lot with `dbplyr` you can not do everything that SQL can do. So at some point you might want to start using SQL directly.
@@ -221,18 +197,13 @@ You can do pretty much anything with these quasi-tables, including grouping, sum
 Let's count how many species there are per Relevance categories:
 
 ```{r}
-species_db %>%
-  group_by(Relevance) %>%
-  summarize(num_species = n())
+
 ```
 
 Does that code looks familiar? But this time, here is really the query that was used to retrieve this information:
 
 ```{r}
-species_db %>%
-  group_by(Relevance) %>%
-  summarize(num_species = n()) %>%
-  show_query()
+
 ```
 
 
@@ -242,16 +213,14 @@ Let's reproduce the egg volume analysis we just did. We can calculate the averag
 
 ```{r}
 # loading all the necessary tables
-eggs_db <- tbl(conn, "Bird_eggs")
-nests_db <- tbl(conn, "Bird_nests")
+
 ```
 
 Compute the volume using the same code as previously!! Yes, you can use mutate to create new columns on the tables object
 
 ```{r}
 # Compute the egg volume
-eggs_volume_db <- eggs_db %>%
-  mutate(egg_volume = pi/6*Width^2*Length)
+
 ```
 
 :::{.callout-caution}
@@ -263,24 +232,13 @@ Now let's join this information to the nest table, and average by species
 
 ```{r}
 # Join the egg and nest tables to compute average
-species_egg_volume_avg_db <- left_join(nests_db, eggs_volume_db, by="Nest_ID") %>%
-  group_by(Species) %>%
-  summarise(egg_volume_avg = mean(egg_volume, na.rm = TRUE)) %>%
-  arrange(desc(egg_volume_avg)) %>% 
-  collect() %>%
-  drop_na()
 
-species_egg_volume_avg_db
 ```
 
-What does this SQL query looks like?
+What does this SQL query looks like? Add `show_query()` at the end!
 
 ```{r}
-species_egg_volume_avg_db <- left_join(eggs_volume_db, nests_db, by="Nest_ID") %>%
-  group_by(Species) %>%
-  summarise(egg_volume_avg = mean(egg_volume, na.rm = TRUE)) %>%
-  arrange(desc(egg_volume_avg)) %>% 
-  show_query()
+
 ```
 
 :::{.callout-note}
