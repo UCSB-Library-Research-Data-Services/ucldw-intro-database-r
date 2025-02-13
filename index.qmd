@@ -10,6 +10,8 @@ title: "Integrating SQL into R analytical workflows using duckDB & dbplyr"
 - Server vs personal database
 - dbplyr to connect to the R world
 
+**[Link](https://docs.google.com/presentation/d/e/2PACX-1vSVrdmw3jBVXYrm_RTNJ1TElR4k6h8_ohv1B9R_p2JdQF53CEs36h1cFVNgiOXbdaE9bSXerx2uGON0/pub?start=false&loop=false&delayms=10000) to the slide deck**
+
 ## Hands-on
 
 - How to connect to a database from `R`
