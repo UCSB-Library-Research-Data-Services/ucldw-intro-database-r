@@ -19,6 +19,14 @@ Data were not collected in every year at all sites. Studies of the population ec
 See `01_ASDN_Readme.txt` provided in the `data` folder for full metadata information about this data set.
 
 
+## Our goals today are:
+
+- Compute the average egg volume for each species
+- Do it once using `CSV` files + `dplyr`
+- Do it once using a personal database (`duckDB`) + `dbplyr`
+- Share some thoughts on similarities and differences
+
+
 ## Analyzing the bird dataset using csv files (raw data)
 
 Loading the necessary packages. DuckDB has its own R package that is mostly a wrapper around dbplyr and DBI.
