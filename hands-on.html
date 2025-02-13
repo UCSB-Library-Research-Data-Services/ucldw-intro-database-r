@@ -195,6 +195,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#the-dataset" id="toc-the-dataset" class="nav-link active" data-scroll-target="#the-dataset">The dataset</a></li>
+  <li><a href="#our-goals-today-are" id="toc-our-goals-today-are" class="nav-link" data-scroll-target="#our-goals-today-are">Our goals today are:</a></li>
   <li><a href="#analyzing-the-bird-dataset-using-csv-files-raw-data" id="toc-analyzing-the-bird-dataset-using-csv-files-raw-data" class="nav-link" data-scroll-target="#analyzing-the-bird-dataset-using-csv-files-raw-data">Analyzing the bird dataset using csv files (raw data)</a>
   <ul class="collapse">
   <li><a href="#average-egg-volume" id="toc-average-egg-volume" class="nav-link" data-scroll-target="#average-egg-volume">Average egg volume</a></li>
@@ -247,6 +248,15 @@ window.Quarto = {
 </div>
 <p>Data were not collected in every year at all sites. Studies of the population ecology of these birds included nest-monitoring to determine timing of reproduction and reproductive success; live capture of birds to collect blood samples, feathers, and fecal samples for investigations of population structure and pathogens; banding of birds to determine annual survival rates; resighting of color-banded birds to determine space use and site fidelity; and use of light-sensitive geolocators to investigate migratory movements. Data on climatic conditions, prey abundance, and predators were also collected. Environmental data included weather stations that recorded daily climatic conditions, surveys of seasonal snowmelt, weekly sampling of terrestrial and aquatic invertebrates that are prey of shorebirds, live trapping of small mammals (alternate prey for shorebird predators), and daily counts of potential predators (jaegers, falcons, foxes). Detailed field methods for each year are available in the ASDN_protocol_201X.pdf files. All research was conducted under permits from relevant federal, state and university authorities.</p>
 <p>See <code>01_ASDN_Readme.txt</code> provided in the <code>data</code> folder for full metadata information about this data set.</p>
+</section>
+<section id="our-goals-today-are" class="level2">
+<h2 class="anchored" data-anchor-id="our-goals-today-are">Our goals today are:</h2>
+<ul>
+<li>Compute the average egg volume for each species</li>
+<li>Do it once using <code>CSV</code> files + <code>dplyr</code></li>
+<li>Do it once using a personal database (<code>duckDB</code>) + <code>dbplyr</code></li>
+<li>Share some thoughts on similarities and differences</li>
+</ul>
 </section>
 <section id="analyzing-the-bird-dataset-using-csv-files-raw-data" class="level2">
 <h2 class="anchored" data-anchor-id="analyzing-the-bird-dataset-using-csv-files-raw-data">Analyzing the bird dataset using csv files (raw data)</h2>
@@ -598,10 +608,10 @@ LIMIT 3</code></pre>
 1 Incidental monitoring                             18
 2 Potential predator (eggs; mammal)                  2
 3 Microtine (alternate prey for predators)           5
-4 Study species                                     41
-5 Potential predator (avian)                        25
-6 Potential predator (mammal)                        6
-7 Study species; potential predator (eggs)           2</code></pre>
+4 Potential predator (avian)                        25
+5 Potential predator (mammal)                        6
+6 Study species; potential predator (eggs)           2
+7 Study species                                     41</code></pre>
 </div>
 </div>
 <p>Does that code looks familiar? But this time, here is really the query that was used to retrieve this information:</p>
@@ -767,18 +777,18 @@ Question
  5 wrsa            10111.
  6 sepl             9903.
  7 reph             8444.
- 8 pesa               NA 
- 9 wesa               NA 
-10 herg               NA 
+ 8 wesa               NA 
+ 9 sesa               NA 
+10 pesa               NA 
 11 lbdo               NA 
-12 sesa               NA 
+12 rnph               NA 
 13 btgo               NA 
 14 paja               NA 
-15 rnph               NA 
-16 sbdo               NA 
-17 crpl               NA 
-18 lalo               NA 
-19 test               NA </code></pre>
+15 herg               NA 
+16 lalo               NA 
+17 test               NA 
+18 sbdo               NA 
+19 crpl               NA </code></pre>
 </div>
 </div>
 </section>
