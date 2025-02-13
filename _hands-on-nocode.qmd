@@ -1,5 +1,5 @@
 ---
-title: "Hands-on DuckDB & dplyr"
+title: "Hands-on DuckDB & dbplyr"
 execute:
   warning: false
 ---
