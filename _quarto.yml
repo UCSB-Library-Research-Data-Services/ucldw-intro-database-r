@@ -16,9 +16,9 @@ website:
       - icon: github
         menu:
           - text: Website Code
-            url:  https://github.com/brunj7/intro-database-r
+            url:  https://github.com/UCSB-Library-Research-Data-Services/rds-intro-database-r
           - text: Report an issue
-            url:  https://github.com/brunj7/intro-database-r/issues
+            url:  https://github.com/UCSB-Library-Research-Data-Services/rds-intro-database-r/issues
 
         
 format:
