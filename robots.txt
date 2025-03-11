@@ -1,1 +1,1 @@
-Sitemap: https://UCSB-Library-Research-Data-Services.github.io/rds-intro-database-r/sitemap.xml
+Sitemap: https://UCSB-Library-Research-Data-Services.github.io/ucldw-intro-database-r/sitemap.xml
