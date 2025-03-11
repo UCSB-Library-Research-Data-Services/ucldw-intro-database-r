@@ -1,6 +1,9 @@
 # Integrating SQL into R analytical workflows using duckDB & dbplyr 
 
 
+[![DOI](https://zenodo.org/badge/924972682.svg)](https://doi.org/10.5281/zenodo.15008865)
+
+
 ### Summary
 
 In this workshop, we will discuss why you might consider relational databases to store environmental data. We will go over how to insert data in and retrieve data from a database using R and [duckDB](https://duckdb.org/). We will focus on how to use the R [dbplyr](https://dbplyr.tidyverse.org/) package to integrate databases into tidyverse-focused analytical workflows.
